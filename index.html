@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="buttons.css">
+  <link rel="stylesheet" href="input.css">
+  <style>
+    /* Adjusting for card layout to include credits under the button */
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;  /* Ensures even spacing */
+      flex-grow: 1;  /* Makes the card stretch to fill the available space */
+    }
+
+    .credits {
+      margin-top: 20px;  /* Adds space above the credits */
+      text-align: center;  /* Centers the text */
+      color: white;  /* White text for the credits */
+      font-size: 14px;  /* Smaller text */
+    }
+    
+    .card {
+      height: 500px;
+      width: 400px;
+      padding: 20px;
+      border-radius: 1rem;
+      background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Add any other styles for the card, button, etc. */
+  </style>
+</head>
+<body>
+  <!-- Vanta.js Background -->
+  <div id="vantajs"></div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="card">
+      <div class="card-info">
+        <h1 class="heading">Dear Friend,</h1>
+        <p class="message">
+          You are cordially invited to join us for a delightful outing on 
+          <strong>16.12.24 (Monday)</strong> at 10:30 am. The gathering will 
+          take place at PVP. We look forward to your company as we enjoy a pleasant time together.
+        </p>
+        <p class="confirm-text">Kindly confirm your attendance by 13.12.24 (Friday).</p>
+        <input type="text" class="input" placeholder="Enter your name">
+        
+        <!-- Animated Button with Arrows -->
+        <button class="animated-button">
+          <span class="text">Submit</span>
+          <svg class="arr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+          <svg class="arr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+          <span class="circle"></span>
+        </button>
+
+        <!-- Credits Section (inside the card, below the button) -->
+        <div class="credits">
+          <p>Warm Regards,<br>Anu and Shubu<br></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vanta.js Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.birds.min.js"></script>
+  <script>
+    VANTA.BIRDS({
+      el: "#vantajs",
+      birdSize: 1.50,
+      wingSpan: 21.00,
+      speedLimit: 4.00,
+      separation: 32.00,
+      alignment: 33.00,
+      cohesion: 33.00,
+      quantity: 5
+    });
+  </script>
+</body>
+</html>
